@@ -1,0 +1,135 @@
+/* src/AppleDesign.css */
+
+/* 1. 기본 변수 및 폰트 설정 */
+:root {
+    --apple-gray: #F5F5F7;
+    --apple-blue: #007AFF;
+    --apple-blue-hover: #0071E3;
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --text-primary: #1D1D1F;
+    --text-secondary: #86868B;
+    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--apple-gray);
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 2. 레이아웃 (Layout) */
+.apple-layout {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.apple-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.apple-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.apple-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.apple-subtitle {
+    color: var(--text-secondary);
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* 3. 카드 (Card - 유리 효과) */
+.apple-card {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px); /* 핵심: 뒤가 흐릿하게 비침 */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* 4. 입력창 (Input) */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    margin-left: 4px;
+}
+
+.apple-input {
+    width: 100%;
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    background-color: rgba(245, 245, 247, 0.5); /* 연한 회색 */
+    font-size: 16px;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.apple-input:focus {
+    background-color: #fff;
+    border-color: rgba(0, 122, 255, 0.3);
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+}
+
+/* 5. 버튼 (Button) */
+.apple-button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 50px; /* 완전 둥글게 */
+    border: none;
+    background-color: var(--apple-blue);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.apple-button:hover {
+    background-color: var(--apple-blue-hover);
+    transform: scale(1.01);
+}
+
+.apple-button:active {
+    transform: scale(0.98);
+}
+
+.diary-title {
+    font-size: 17px;       /* 기존에 있던 글자 크기 */
+    font-weight: 600;      /* 기존에 있던 굵기 */
+
+    /* ▼ 이 줄을 추가하세요! ▼ */
+    line-height: 22px;     /* 글자 내용과 상관없이 높이를 22px로 고정 */
+
+    /* (참고) 제목이 너무 길어질 때 말줄임표(...) 처리가 필요하면 이것도 같이 확인 */
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -8,7 +8,6 @@ import Index from "./pages/index/Index.jsx";
 import Login from "./pages/user/Login.jsx";
 import Join from "./pages/user/Join.jsx";
 
-
 function App() {
 
   return (
